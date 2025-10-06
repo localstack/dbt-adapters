@@ -13,9 +13,13 @@ def dbt_profile_target():
     profile = {
         "type": "snowflake",
         "threads": 4,
-        "account": os.getenv("SNOWFLAKE_TEST_ACCOUNT"),
-        "database": os.getenv("SNOWFLAKE_TEST_DATABASE"),
-        "warehouse": os.getenv("SNOWFLAKE_TEST_WAREHOUSE"),
+        "account": "localstack",
+        "host": "snowflake.localhost.localstack.cloud",
+        "port": 4566,
+        "user": "test",
+        "password": "test",
+        "database": "TEST",
+        "warehouse": "test",
     }
 
     # Support PAT or password authentication
