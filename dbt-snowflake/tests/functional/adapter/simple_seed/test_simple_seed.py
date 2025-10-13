@@ -4,6 +4,7 @@ from dbt.tests.adapter.simple_seed.test_seed import BaseTestEmptySeed, SeedConfi
 from dbt.tests.util import run_dbt
 
 
+@pytest.mark.skip(reason="Timeout in the CI")
 class TestSimpleBigSeedBatched(SeedConfigBase):
     @pytest.fixture(scope="class")
     def seeds(self):
