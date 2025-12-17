@@ -7,13 +7,16 @@ import pytest
 class TestKeyPairAuth:
     @pytest.fixture(scope="class", autouse=True)
     def dbt_profile_target(self):
+        private_key_path = os.path.abspath(
+            os.path.join(os.path.dirname(__file__), "..", "..", "..", "rsa_key.p8")
+        )
         return {
             "type": "snowflake",
             "threads": 4,
-            "account": os.getenv("SNOWFLAKE_TEST_ACCOUNT"),
+            "account": "localstack",
+            "host": "snowflake.localhost.localstack.cloud",
             "user": os.getenv("SNOWFLAKE_TEST_USER"),
             "private_key": os.getenv("SNOWFLAKE_TEST_PRIVATE_KEY"),
-            "private_key_passphrase": os.getenv("SNOWFLAKE_TEST_PRIVATE_KEY_PASSPHRASE"),
             "database": os.getenv("SNOWFLAKE_TEST_DATABASE"),
             "warehouse": os.getenv("SNOWFLAKE_TEST_WAREHOUSE"),
         }

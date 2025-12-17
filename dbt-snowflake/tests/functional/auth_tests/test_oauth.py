@@ -60,6 +60,7 @@ select 2 as id
 """
 
 
+@pytest.mark.skip(reason="Skipped for LocalStack testing")
 class TestSnowflakeOauth:
     @pytest.fixture(scope="class", autouse=True)
     def dbt_profile_target(self):
