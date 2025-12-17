@@ -7,9 +7,6 @@ import pytest
 class TestKeyPairAuth:
     @pytest.fixture(scope="class", autouse=True)
     def dbt_profile_target(self):
-        private_key_path = os.path.abspath(
-            os.path.join(os.path.dirname(__file__), "..", "..", "..", "rsa_key.p8")
-        )
         return {
             "type": "snowflake",
             "threads": 4,
