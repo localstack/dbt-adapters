@@ -19,7 +19,7 @@ def dbt_profile_target():
         "user": "test",
         "password": "test",
         "database": "TEST",
-        "warehouse": "test",
+        "warehouse": "LOCAL",
     }
 
     # Support PAT or password authentication
