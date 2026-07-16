@@ -11,6 +11,7 @@ class TestPATAuth:
             "type": "snowflake",
             "threads": 4,
             "account": os.getenv("SNOWFLAKE_TEST_ACCOUNT"),
+            "host": "snowflake.localhost.localstack.cloud",
             "user": os.getenv("SNOWFLAKE_TEST_USER"),
             "authenticator": "programmatic_access_token",
             "token": os.getenv("SNOWFLAKE_TEST_TOKEN"),

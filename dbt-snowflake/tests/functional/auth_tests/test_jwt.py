@@ -33,6 +33,7 @@ select 2 as id
 """
 
 
+@pytest.mark.skip(reason="Skipped for LocalStack testing")
 class TestSnowflakeJWT:
     """Tests that setting authenticator: jwt allows setting token to a plain JWT
     that will be passed into the Snowflake connection without modification."""

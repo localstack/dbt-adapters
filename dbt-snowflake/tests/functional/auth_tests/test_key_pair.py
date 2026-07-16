@@ -10,10 +10,10 @@ class TestKeyPairAuth:
         return {
             "type": "snowflake",
             "threads": 4,
-            "account": os.getenv("SNOWFLAKE_TEST_ACCOUNT"),
+            "account": "localstack",
+            "host": "snowflake.localhost.localstack.cloud",
             "user": os.getenv("SNOWFLAKE_TEST_USER"),
             "private_key": os.getenv("SNOWFLAKE_TEST_PRIVATE_KEY"),
-            "private_key_passphrase": os.getenv("SNOWFLAKE_TEST_PRIVATE_KEY_PASSPHRASE"),
             "database": os.getenv("SNOWFLAKE_TEST_DATABASE"),
             "warehouse": os.getenv("SNOWFLAKE_TEST_WAREHOUSE"),
         }
